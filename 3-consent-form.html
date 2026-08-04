@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     CONSULTATION & CONSENT FORM — Bio-Microneedling Facial with
+     Green Peel (Dr. Schrammek herbal peeling + bio-microneedling).
+     Client completes & signs before their appointment. Submits to
+     the shared Google backend (via pack.js): logs to the Sheet as
+     "Green Peel Consent", emails a signed PDF, and sends the client
+     the data-autoresponse email (which includes the 3 guide links).
+     Signature captured via #sigField canvas. Facial-peel + needling
+     context — NO injectable-product or energy fields.
+     ============================================================ -->
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Green Peel &amp; Bio-Microneedling Consent Form | Layali Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head><body>
+<div class="wrap">
+  <header class="hero">
+    <img class="logo" src="logo.jpg" alt="Layali Clinic">
+    <span class="kicker">Green Peel &amp; Bio-Microneedling · Informed Consent</span>
+    <h1>Green Peel &amp; Bio-Microneedling Consent Form</h1>
+    <p class="sub">Treatment: Bio-Microneedling Facial with Green Peel (Dr. Schrammek herbal peeling). Please read every section carefully — your signature confirms you understand and accept all of it.</p>
+  </header>
+
+  <!-- The data-autoresponse below is the exact email the client receives on submit.
+       It confirms the consent, reminds them to READ pre-care & KEEP aftercare,
+       and includes the three guide links plus clinic contact details. -->
+  <form data-pack-form="Green Peel Consent" data-pdf-title="Green Peel &amp; Bio-Microneedling Consent Form" data-autoresponse="Thank you for completing your consent form for your Bio-Microneedling Facial with Green Peel at Layali Clinic. We've received it and saved a copy to your record.
+
+Please READ your Pre-Care guide BEFORE your appointment, and KEEP your Aftercare guide to hand for afterwards. Two things matter most after treatment: protect your skin from the sun with SPF 50, and do NOT pick or peel the flaking skin — let it shed naturally.
+
+Your guides:
+Treatment Guide: https://husna3414-ui.github.io/layali-green-peel/1-treatment-guide.html
+Pre-Care Guide: https://husna3414-ui.github.io/layali-green-peel/4-pre-care-guide.html
+Aftercare Guide: https://husna3414-ui.github.io/layali-green-peel/6-aftercare-guide.html
+
+If your health, medication or pregnancy status changes before your appointment, please contact us — we may need to adjust or reschedule your treatment to keep you safe.
+
+Layali Clinic
+07787 708200
+info.lushlips@gmail.com
+442 Lea Bridge Road, Leyton, London E10 7DT
+
+— Layali Clinic" novalidate>
+
+    <!-- CLIENT DETAILS -->
+    <div class="card">
+      <div class="sec-h"><span class="sec-n">1</span><h2 class="sec-t">Your details</h2></div>
+      <div class="row">
+        <div class="f"><label class="q">First name <span class="req">*</span></label><input type="text" name="First name" required></div>
+        <div class="f"><label class="q">Last name <span class="req">*</span></label><input type="text" name="Last name" required></div>
+      </div>
+      <div class="row">
+        <div class="f"><label class="q">Date of birth <span class="req">*</span></label><input type="date" name="Date of birth" required></div>
+        <div class="f"><label class="q">Today's date <span class="req">*</span></label><input type="date" name="Date" required></div>
+      </div>
+      <div class="f"><label class="q">Email <span class="req">*</span><div class="hint">Your confirmation copy &amp; guide links are sent here.</div></label><input type="email" name="Email" required></div>
+      <div class="f"><label class="q">Phone number <span class="req">*</span></label><input type="tel" name="Phone number" required></div>
+      <div class="f"><label class="q">Address <span class="req">*</span></label>
+        <input type="text" name="Street address" placeholder="Street address" required style="margin-bottom:10px">
+        <input type="text" name="Street address line 2" placeholder="Street address line 2 (optional)" style="margin-bottom:10px">
+        <div class="row" style="margin-bottom:10px"><input type="text" name="City" placeholder="City" required><input type="text" name="County" placeholder="County"></div>
+        <input type="text" name="Postcode" placeholder="Postcode" required></div>
+      <div class="f" data-group><label class="q">Age confirmation <span class="req">*</span></label>
+        <div class="opts" data-min="1" data-single>
+          <label class="opt"><input type="checkbox" name="Age confirmation" value="I confirm I am 18 years of age or over"><span>I confirm I am 18 years of age or over.</span></label>
+        </div><div class="err-msg">Please confirm you are 18 or over.</div></div>
+      <div class="row">
+        <div class="f"><label class="q">Emergency contact name <span class="req">*</span></label><input type="text" name="Emergency contact name" required></div>
+        <div class="f"><label class="q">Emergency contact number <span class="req">*</span></label><input type="tel" name="Emergency contact number" required></div>
+      </div>
+    </div>
+
+    <!-- INFORMED CONSENT -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">2</span><h2 class="sec-t">Informed consent</h2></div>
+      <p>This informed consent form aims to ensure that you have comprehensive written information regarding the risks, benefits, alternatives, expected outcomes, recovery process and possible complications associated with a Bio-Microneedling Facial with Green Peel (Dr. Schrammek herbal peeling).</p>
+      <p>This document is intended to supplement your discussion with your practitioner. It is very important that you thoroughly read and understand all information presented. If you have any questions or uncertainties regarding the procedure, expected results, side effects, contraindications, aftercare or risks, you must discuss them with your practitioner before signing.</p>
+      <p>By signing this form, you confirm that you understand the nature of the treatment, the potential risks and complications, the alternatives available, and that results vary and cannot be guaranteed.</p>
+    </div>
+
+    <!-- TREATMENT AREAS & SKIN TYPE -->
+    <div class="card">
+      <div class="sec-h"><span class="sec-n">3</span><h2 class="sec-t">Treatment area &amp; skin type</h2></div>
+      <div class="f" data-group><label class="q">Area(s) to be treated <span class="req">*</span></label>
+        <div class="opts grid-opts" data-min="1">
+          <label class="opt"><input type="checkbox" name="Treatment areas" value="Full face"><span>Full face</span></label>
+          <label class="opt"><input type="checkbox" name="Treatment areas" value="Cheeks"><span>Cheeks</span></label>
+          <label class="opt"><input type="checkbox" name="Treatment areas" value="Forehead"><span>Forehead</span></label>
+          <label class="opt"><input type="checkbox" name="Treatment areas" value="Around the eyes"><span>Around the eyes</span></label>
+          <label class="opt"><input type="checkbox" name="Treatment areas" value="Around the mouth"><span>Around the mouth</span></label>
+          <label class="opt"><input type="checkbox" name="Treatment areas" value="Neck"><span>Neck</span></label>
+          <label class="opt"><input type="checkbox" name="Treatment areas" value="Décolletage / chest"><span>Décolletage / chest</span></label>
+          <label class="opt"><input type="checkbox" name="Treatment areas" value="Hands"><span>Hands</span></label>
+          <label class="opt"><input type="checkbox" name="Treatment areas" value="Back"><span>Back</span></label>
+          <label class="opt"><input type="checkbox" name="Treatment areas" value="Other body area"><span>Other body area</span></label>
+        </div><div class="err-msg">Please select at least one area.</div></div>
+      <div class="f"><label class="q">Other area (if applicable)</label><input type="text" name="Other treatment area"></div>
+
+      <div class="f" data-group><label class="q">Skin type (Fitzpatrick) <span class="req">*</span><div class="hint">This helps us assess your pigmentation risk and choose the safest formula. If unsure, choose your best guess — we'll confirm at your appointment.</div></label>
+        <div class="opts" data-min="1" data-single>
+          <label class="opt"><input type="checkbox" name="Fitzpatrick skin type" value="Type I — very fair, always burns, never tans"><span>Type I — very fair, always burns, never tans</span></label>
+          <label class="opt"><input type="checkbox" name="Fitzpatrick skin type" value="Type II — fair, usually burns, tans minimally"><span>Type II — fair, usually burns, tans minimally</span></label>
+          <label class="opt"><input type="checkbox" name="Fitzpatrick skin type" value="Type III — medium, sometimes burns, tans gradually"><span>Type III — medium, sometimes burns, tans gradually</span></label>
+          <label class="opt"><input type="checkbox" name="Fitzpatrick skin type" value="Type IV — olive/light brown, rarely burns, tans easily"><span>Type IV — olive / light brown, rarely burns, tans easily</span></label>
+          <label class="opt"><input type="checkbox" name="Fitzpatrick skin type" value="Type V — brown, very rarely burns, tans darkly"><span>Type V — brown, very rarely burns, tans darkly</span></label>
+          <label class="opt"><input type="checkbox" name="Fitzpatrick skin type" value="Type VI — deeply pigmented, never burns"><span>Type VI — deeply pigmented, never burns</span></label>
+        </div><div class="err-msg">Please select your skin type.</div></div>
+      <div class="f" data-group><label class="q">Pigmentation risk <span class="req">*</span></label>
+        <div class="opts" data-min="1" data-single>
+          <label class="opt"><input type="checkbox" name="Pigmentation understanding" value="I understand that darker skin types (Fitzpatrick IV–VI) have a higher risk of post-inflammatory hyperpigmentation, and that a patch test and/or a gentler formula may be recommended for me."><span>I understand that darker skin types (Fitzpatrick IV–VI) carry a higher risk of temporary or longer-lasting darkening (post-inflammatory hyperpigmentation), and that a patch test and/or a gentler formula may be recommended for me.</span></label>
+        </div><div class="err-msg">Please confirm you understand.</div></div>
+      <div class="f"><label class="q">Your main goals for treatment <span class="req">*</span><div class="hint">e.g. brighter skin, more even tone, softer pigmentation, smoother texture, fine lines.</div></label><textarea name="Client goals" required></textarea></div>
+    </div>
+
+    <!-- EXPECTATIONS -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">4</span><h2 class="sec-t">Expectations</h2></div>
+      <p>Please read and confirm you understand the following before treatment:</p>
+      <div class="f" data-group><div class="opts" data-all>
+        <label class="opt"><input type="checkbox" name="Expectations" value="I understand that peeling, flaking, redness and downtime are expected — especially with the deeper (Classic) formula, with visible peeling over roughly 2–5 days."><span>I understand that peeling, flaking, redness and downtime are <b>expected</b> — especially with the deeper (Classic) formula, with visible peeling over roughly 2–5 days.</span></label>
+        <label class="opt"><input type="checkbox" name="Expectations" value="I understand that a course of treatments is usually needed for the best result."><span>I understand that a <b>course of treatments</b> is usually needed for the best result.</span></label>
+        <label class="opt"><input type="checkbox" name="Expectations" value="I understand that results vary between individuals and are not guaranteed."><span>I understand that results <b>vary between individuals and are not guaranteed</b>.</span></label>
+        <label class="opt"><input type="checkbox" name="Expectations" value="I understand that maintenance treatments and good sun protection & skincare are needed to keep results."><span>I understand that maintenance treatments and good sun protection &amp; skincare are needed to keep results.</span></label>
+      </div><div class="err-msg">Please confirm all.</div></div>
+    </div>
+
+    <!-- MEDICAL HISTORY -->
+    <div class="card">
+      <div class="sec-h"><span class="sec-n">5</span><h2 class="sec-t">Medical history</h2></div>
+      <div class="f" data-group><label class="q">Do you have any of the following? <span class="req">*</span><div class="hint">Please tick all that apply.</div></label>
+        <div class="opts grid-opts" data-min="1" data-none="None of the above">
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Diabetes"><span>Diabetes</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="High or low blood pressure"><span>High or low blood pressure</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Heart condition"><span>Heart condition</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Epilepsy or seizures"><span>Epilepsy or seizures</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Bleeding or clotting disorder"><span>Bleeding or clotting disorder</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="History of excessive bruising"><span>History of excessive bruising</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Autoimmune disease"><span>Autoimmune disease</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Thyroid disorder"><span>Thyroid disorder</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Eczema or dermatitis"><span>Eczema or dermatitis</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Psoriasis"><span>Psoriasis</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Rosacea"><span>Rosacea</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Active acne"><span>Active acne</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Skin infection"><span>Skin infection</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Herpes simplex / cold sores"><span>Herpes simplex / cold sores</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Melasma or pigmentation disorder"><span>Melasma or pigmentation disorder</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Vitiligo"><span>Vitiligo</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Keloid or hypertrophic scarring"><span>Keloid or hypertrophic scarring</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Poor wound healing"><span>Poor wound healing</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Cancer or history of cancer"><span>Cancer or history of cancer</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Immune system disorder"><span>Immune system disorder</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="HIV / Hepatitis"><span>HIV / Hepatitis</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Fainting episodes"><span>Fainting episodes</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="None of the above"><span>None of the above</span></label>
+        </div><div class="err-msg">Please make a selection (choose "None of the above" if none apply).</div></div>
+      <div class="f"><label class="q">Please provide further details if required</label><textarea name="Medical history details"></textarea></div>
+    </div>
+
+    <!-- PREGNANCY -->
+    <div class="card">
+      <div class="sec-h"><span class="sec-n">6</span><h2 class="sec-t">Pregnancy, breastfeeding &amp; female health</h2></div>
+      <div class="sec-d">Please confirm all of the following (if any do not apply, tell your practitioner):</div>
+      <div class="f" data-group><div class="opts" data-all>
+        <label class="opt"><input type="checkbox" name="Pregnancy declaration" value="I am not pregnant"><span>I am not pregnant</span></label>
+        <label class="opt"><input type="checkbox" name="Pregnancy declaration" value="I am not breastfeeding"><span>I am not breastfeeding</span></label>
+        <label class="opt"><input type="checkbox" name="Pregnancy declaration" value="I am not trying to conceive"><span>I am not trying to conceive</span></label>
+        <label class="opt"><input type="checkbox" name="Pregnancy declaration" value="I understand this treatment is not recommended during pregnancy or breastfeeding"><span>I understand this treatment is not recommended during pregnancy or breastfeeding</span></label>
+      </div><div class="err-msg">Please confirm all (or tell your practitioner if any do not apply).</div></div>
+      <div class="f"><label class="q">If applicable, please provide any further information</label><textarea name="Pregnancy details"></textarea></div>
+    </div>
+
+    <!-- ALLERGIES -->
+    <div class="card">
+      <div class="sec-h"><span class="sec-n">7</span><h2 class="sec-t">Allergies</h2></div>
+      <div class="f" data-group><label class="q">Have you ever had an allergic reaction to any of the following? <span class="req">*</span><div class="hint">Please tick all that apply. Herbal &amp; plant allergies are especially important for the Green Peel.</div></label>
+        <div class="opts grid-opts" data-min="1" data-none="None of the above">
+          <label class="opt"><input type="checkbox" name="Allergies" value="Herbs, plants or botanicals"><span>Herbs, plants or botanicals</span></label>
+          <label class="opt"><input type="checkbox" name="Allergies" value="Algae / seaweed"><span>Algae / seaweed</span></label>
+          <label class="opt"><input type="checkbox" name="Allergies" value="Aspirin / salicylates"><span>Aspirin / salicylates</span></label>
+          <label class="opt"><input type="checkbox" name="Allergies" value="Skincare products / cosmetics"><span>Skincare products / cosmetics</span></label>
+          <label class="opt"><input type="checkbox" name="Allergies" value="Local anaesthetic / lidocaine"><span>Local anaesthetic / lidocaine</span></label>
+          <label class="opt"><input type="checkbox" name="Allergies" value="Plasters / dressings"><span>Plasters / dressings</span></label>
+          <label class="opt"><input type="checkbox" name="Allergies" value="Chlorhexidine"><span>Chlorhexidine</span></label>
+          <label class="opt"><input type="checkbox" name="Allergies" value="Latex"><span>Latex</span></label>
+          <label class="opt"><input type="checkbox" name="Allergies" value="Nickel / metals"><span>Nickel / metals</span></label>
+          <label class="opt"><input type="checkbox" name="Allergies" value="Antibiotics"><span>Antibiotics</span></label>
+          <label class="opt"><input type="checkbox" name="Allergies" value="Foods (e.g. nuts, soy)"><span>Foods (e.g. nuts, soy)</span></label>
+          <label class="opt"><input type="checkbox" name="Allergies" value="None of the above"><span>None of the above</span></label>
+        </div><div class="err-msg">Please make a selection.</div></div>
+      <div class="f"><label class="q">If yes, please provide details</label><textarea name="Allergy details"></textarea></div>
+    </div>
+
+    <!-- MEDICATIONS -->
+    <div class="card">
+      <div class="sec-h"><span class="sec-n">8</span><h2 class="sec-t">Medications</h2></div>
+      <div class="f" data-group><label class="q">Are you currently taking any medication? <span class="req">*</span></label>
+        <div class="opts" data-min="1" data-single>
+          <label class="opt"><input type="checkbox" name="Currently taking medication" value="Yes"><span>Yes</span></label>
+          <label class="opt"><input type="checkbox" name="Currently taking medication" value="No"><span>No</span></label>
+        </div><div class="err-msg">Please choose one.</div></div>
+      <div class="f"><label class="q">If yes, please list all medication<div class="hint">Including prescription, over-the-counter, herbal supplements and vitamins.</div></label><textarea name="Medication list"></textarea></div>
+      <div class="f" data-group><label class="q">Do you take, or have you recently taken, any of the following? <span class="req">*</span></label>
+        <div class="opts grid-opts" data-min="1" data-none="None of the above">
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Isotretinoin / Roaccutane (now or in the last 6–12 months)"><span>Isotretinoin / Roaccutane (now or in the last 6–12 months)</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Aspirin"><span>Aspirin</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Warfarin"><span>Warfarin</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Apixaban"><span>Apixaban</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Rivaroxaban"><span>Rivaroxaban</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Clopidogrel"><span>Clopidogrel</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Other blood-thinning medication"><span>Other blood-thinning medication</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Steroids"><span>Steroids</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Immunosuppressants"><span>Immunosuppressants</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Antibiotics"><span>Antibiotics</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Ibuprofen / anti-inflammatories"><span>Ibuprofen / anti-inflammatories</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Photosensitising medication"><span>Photosensitising medication</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="Fish oil / Vitamin E / herbal supplements"><span>Fish oil / Vitamin E / herbal supplements</span></label>
+          <label class="opt"><input type="checkbox" name="Specific medication" value="None of the above"><span>None of the above</span></label>
+        </div><div class="err-msg">Please make a selection.</div></div>
+    </div>
+
+    <!-- WHAT IS THE TREATMENT -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">9</span><h2 class="sec-t">What is this treatment?</h2></div>
+      <p>The Green Peel is a natural herbal skin-renewal treatment (Dr. Schrammek). A carefully balanced mixture of herbs, algae, enzymes, vitamins and minerals is massaged into the skin to activate the skin's own renewal process, encouraging the skin to shed tired surface layers and rebuild fresher, brighter, smoother skin.</p>
+      <p>Bio-microneedling uses a device with very fine needles to create tiny controlled micro-channels in the skin. This stimulates new collagen and helps the herbal actives absorb and work more effectively.</p>
+      <p>Different formula strengths exist — from lighter (Fresh-Up / Mild), with little or no visible peeling, to the deeper Classic formula, which produces visible peeling over roughly 2–5 days. The right formula for you will be agreed at your consultation.</p>
+    </div>
+
+    <!-- BENEFITS -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">10</span><h2 class="sec-t">Benefits</h2></div>
+      <p>Potential benefits may include:</p>
+      <ul><li>Brighter, fresher-looking skin</li><li>More even skin tone</li><li>Softening of pigmentation &amp; sun damage</li><li>Smoother, refined texture</li><li>Softening of fine lines</li><li>Collagen stimulation</li><li>Improved overall skin quality &amp; radiance</li></ul>
+      <p>I understand that results vary between individuals and cannot be guaranteed.</p>
+    </div>
+
+    <!-- RISKS -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">11</span><h2 class="sec-t">Risks &amp; complications</h2></div>
+      <p>While every effort is made to minimise risks, no treatment is entirely risk-free. It has been explained to me that risks include, but are not limited to:</p>
+
+      <h3>Common &amp; expected</h3>
+      <ul><li>Redness</li><li>Peeling &amp; flaking (particularly with the Classic formula)</li><li>Tightness &amp; dryness</li><li>Sensitivity &amp; tenderness</li><li>Mild swelling</li><li>Temporary darkening before the skin renews</li><li>Pinpoint bleeding or mild bruising from microneedling</li></ul>
+
+      <h3>Serious &amp; less common</h3>
+      <ul><li><b>Post-inflammatory hyperpigmentation (darkening) — the most important risk, and higher in darker skin types (Fitzpatrick IV–VI). It may be temporary or, rarely, longer-lasting.</b></li><li>Post-inflammatory hypopigmentation (lightening)</li><li>Infection (bacterial, or reactivation of cold-sore / herpes virus)</li><li>Prolonged redness or sensitivity</li><li>Allergic or hypersensitivity reaction</li><li>Scarring — usually only if the skin is picked, scratched or not cared for</li><li>Delayed healing</li><li>Uneven or unsatisfactory result requiring further treatment</li></ul>
+
+      <div class="notice warn"><b>Pigmentation:</b> Because this treatment renews the skin, there is a real risk of temporary or, rarely, longer-lasting darkening — especially in darker skin tones. Strict sun avoidance and daily SPF 50 afterwards are essential, and I must not pick or peel the skin.</div>
+
+      <div class="f" data-group><label class="q">Please confirm <span class="req">*</span></label>
+        <div class="opts" data-min="1" data-single>
+          <label class="opt"><input type="checkbox" name="Risk acknowledgement" value="I have read and understood the risks, including the risk of post-inflammatory hyperpigmentation, and I accept them."><span>I have read and understood the risks above, <b>including the risk of post-inflammatory hyperpigmentation</b>, and I accept them.</span></label>
+        </div><div class="err-msg">Please confirm.</div></div>
+    </div>
+
+    <!-- CONTRAINDICATIONS -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">12</span><h2 class="sec-t">Contraindications</h2></div>
+      <p>This treatment may not be suitable, or may need to be postponed, in certain circumstances. Please tick any that currently apply to you:</p>
+      <div class="f" data-group><label class="q">Do any of the following apply? <span class="req">*</span></label>
+        <div class="opts grid-opts" data-min="1" data-none="None of the above">
+          <label class="opt"><input type="checkbox" name="Contraindications" value="Pregnancy"><span>Pregnancy</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="Breastfeeding"><span>Breastfeeding</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="Active infection in the treatment area"><span>Active infection in the treatment area</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="Active acne breakout in the treatment area"><span>Active acne breakout in the treatment area</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="Active cold sore"><span>Active cold sore</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="Open or broken skin in the area"><span>Open or broken skin in the area</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="Eczema, dermatitis or rosacea flare in the area"><span>Eczema, dermatitis or rosacea flare in the area</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="Recent isotretinoin / Roaccutane use"><span>Recent isotretinoin / Roaccutane use</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="Sunburn or active/fresh tan"><span>Sunburn or active / fresh tan</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="History of keloid scarring"><span>History of keloid scarring</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="Uncontrolled diabetes"><span>Uncontrolled diabetes</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="Immunosuppression"><span>Immunosuppression</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="Allergy to herbs, plants or products used"><span>Allergy to herbs, plants or products used</span></label>
+          <label class="opt"><input type="checkbox" name="Contraindications" value="None of the above"><span>None of the above</span></label>
+        </div><div class="err-msg">Please make a selection.</div></div>
+      <div class="f"><label class="q">Please provide details</label><textarea name="Contraindication details"></textarea></div>
+      <p>I confirm that I have disclosed all medical conditions, medications and allergies, and I understand that failure to disclose relevant information may increase my risk of complications.</p>
+    </div>
+
+    <!-- ALTERNATIVES -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">13</span><h2 class="sec-t">Alternative treatments</h2></div>
+      <p>I understand that alternative options may include:</p>
+      <ul><li>No treatment</li><li>Chemical peels (acid-based)</li><li>Microneedling on its own</li><li>A medical-grade skincare routine</li><li>Other practitioner-recommended treatments</li></ul>
+      <p>I understand that I have the right to decline treatment or choose an alternative option.</p>
+    </div>
+
+    <!-- EMERGENCIES / WARNING CARD -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">14</span><h2 class="sec-t">Warning signs &amp; emergencies</h2></div>
+      <div class="notice warn"><h4>Contact Layali Clinic if you notice</h4>
+        <ul style="margin:10px 0 0;padding-left:18px"><li>Redness or sensitivity worsening rather than settling</li><li>Increasing discomfort</li><li>A cold sore developing</li><li>Unusual or patchy darkening (pigmentation)</li><li>Weeping, crusting or an area that looks infected</li><li>Any symptom that concerns you</li></ul>
+        <div style="margin-top:10px">Seek <b>urgent</b> medical care (call <b>999</b> or go to <b>A&amp;E</b>) if you develop signs of a <b>spreading infection</b> (spreading redness/heat/swelling with pus, red streaking, fever, feeling unwell) or a <b>severe allergic reaction</b> (facial swelling, difficulty breathing or swallowing, widespread rash). <b>Layali Clinic:</b> 07787&nbsp;708200.</div>
+      </div>
+    </div>
+
+    <!-- PHOTOGRAPHY -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">15</span><h2 class="sec-t">Clinical photographs</h2></div>
+      <p>I authorise the taking of clinical photographs before, during and after treatment. I understand photographs are used for assessment, treatment planning, medical records, monitoring progress and comparing results, and will be stored securely as part of my treatment record.</p>
+      <div class="f" data-group><label class="q">Please tick <span class="req">*</span></label>
+        <div class="opts" data-min="1">
+          <label class="opt"><input type="checkbox" name="Photography consent" value="I consent to clinical photographs for medical records"><span>I consent to clinical photographs for medical records.</span></label>
+          <label class="opt"><input type="checkbox" name="Photography consent" value="I consent to my images being used for educational or training purposes, with my identity protected where possible"><span>I consent to my images being used for educational or training purposes, with my identity protected where possible.</span></label>
+          <label class="opt"><input type="checkbox" name="Photography consent" value="I consent to Layali Clinic using my images for marketing purposes, including social media, website, advertising or promotional materials"><span>I consent to Layali Clinic using my images for marketing purposes, including social media, website, advertising or promotional materials.</span></label>
+          <label class="opt"><input type="checkbox" name="Photography consent" value="I do not consent to marketing use, but I understand clinical photographs may still be required for medical records"><span>I do not consent to marketing use, but I understand clinical photographs may still be required for medical records.</span></label>
+        </div><div class="err-msg">Please tick at least one.</div></div>
+      <div class="f"><label class="q">Your initials <span class="req">*</span></label><input type="text" name="Photography initials" required style="max-width:140px"></div>
+    </div>
+
+    <!-- PAYMENT & CANCELLATION -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">16</span><h2 class="sec-t">Payment &amp; cancellation</h2></div>
+      <p>I understand that this is an elective aesthetic treatment. I understand that:</p>
+      <ul><li>The treatment fee (£POA — confirmed at consultation) has been or will be explained to me.</li><li>Payment is required as agreed by the clinic.</li><li>Deposits are non-refundable unless otherwise stated by the clinic policy.</li><li>Once treatment has been carried out, no refund will be given.</li><li>Reasonable notice is required to cancel or reschedule; late cancellations or no-shows may forfeit the deposit.</li><li>Results vary and a course may be required, which may incur additional cost.</li></ul>
+      <div class="f"><label class="q">Your initials <span class="req">*</span></label><input type="text" name="Payment initials" required style="max-width:140px"></div>
+    </div>
+
+    <!-- FINAL DECLARATION -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">17</span><h2 class="sec-t">Final declaration &amp; consent</h2></div>
+      <p>I voluntarily consent to undergo a Bio-Microneedling Facial with Green Peel at Layali Clinic. Please read and confirm each of the following:</p>
+      <div class="f" data-group><div class="opts" data-all>
+        <label class="opt"><input type="checkbox" name="Final declaration" value="I have READ the Pre-Care guide and understand how to prepare before my appointment."><span>I have <b>read the Pre-Care guide</b> and understand how to prepare before my appointment.</span></label>
+        <label class="opt"><input type="checkbox" name="Final declaration" value="I have READ the Aftercare guide and understand how to care for my skin, including strict sun protection and not picking the peeling skin."><span>I have <b>read the Aftercare guide</b> and understand how to care for my skin, including strict sun protection and <b>not picking the peeling skin</b>.</span></label>
+        <label class="opt"><input type="checkbox" name="Final declaration" value="I have had the opportunity to ask questions and they have been answered to my satisfaction."><span>I have had the opportunity to <b>ask questions</b> and they have been answered to my satisfaction.</span></label>
+        <label class="opt"><input type="checkbox" name="Final declaration" value="I understand that results vary and are NOT guaranteed, and that a course may be needed."><span>I understand that results vary and are <b>not guaranteed</b>, and that a course may be needed.</span></label>
+        <label class="opt"><input type="checkbox" name="Final declaration" value="I understand a patch test may be recommended, and I understand its purpose in checking my skin's reaction and pigmentation risk."><span>I understand a <b>patch test</b> may be recommended, and I understand its purpose in checking my skin's reaction and pigmentation risk.</span></label>
+        <label class="opt"><input type="checkbox" name="Final declaration" value="I confirm the information I have given is true and complete, and I will inform Layali Clinic of any changes to my health, medication or pregnancy status."><span>I confirm the information I have given is <b>true and complete</b>, and I will inform Layali Clinic of any changes to my health, medication or pregnancy status.</span></label>
+        <label class="opt"><input type="checkbox" name="Final declaration" value="I am able to read and understand English."><span>I am able to read and understand English.</span></label>
+      </div><div class="err-msg">Please confirm all statements to continue.</div></div>
+
+      <div class="f" data-group><div class="opts" data-min="1" data-single>
+        <label class="opt"><input type="checkbox" name="Consent to treatment" value="I have read, understood and accept everything stated in this consent form, and I consent to the Bio-Microneedling Facial with Green Peel."><span>I have read, understood and <b>accept everything stated in this consent form</b>, and I consent to the Bio-Microneedling Facial with Green Peel.</span></label>
+      </div><div class="err-msg">Please confirm to continue.</div></div>
+      <div class="f" data-group><div class="opts" data-min="1" data-single>
+        <label class="opt"><input type="checkbox" name="Data processing consent" value="I have read the Privacy Notice and consent to Layali Clinic processing my personal and health information to provide my care."><span>I have read the <a href="privacy.html" target="_blank">Privacy Notice</a> and consent to Layali Clinic processing my personal &amp; health information to provide my care.</span></label>
+      </div><div class="err-msg">Please confirm to continue.</div></div>
+
+      <div class="f"><label class="q">Your name (printed) <span class="req">*</span></label><input type="text" name="Client name printed" required></div>
+      <div class="f" data-group id="sigField"><label class="q">Your signature <span class="req">*</span><div class="hint">Sign with your finger or mouse.</div></label>
+        <div class="sigwrap"><canvas class="sig"></canvas><div class="sig-base"></div><button type="button" class="sig-clear" id="sigClear">Clear</button></div>
+        <div class="err-msg">Please add your signature.</div></div>
+      <div class="f"><label class="q">Date <span class="req">*</span></label><input type="date" name="Date signed" required></div>
+    </div>
+
+    <!-- PRACTITIONER DECLARATION -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">18</span><h2 class="sec-t">Practitioner declaration</h2></div>
+      <p>I confirm that I have discussed this treatment with the client, including the nature of the treatment, expected benefits, possible risks and complications (including pigmentation), alternatives, aftercare and expected recovery. I confirm that the client has had the opportunity to ask questions and that these have been answered to the best of my ability.</p>
+      <div class="row">
+        <div class="f"><label class="q">Practitioner name</label><input type="text" name="Practitioner name" value="Husna Panjabi"></div>
+        <div class="f"><label class="q">Date</label><input type="date" name="Practitioner date"></div>
+      </div>
+      <div class="notice" style="margin-top:6px">The practitioner's signature is recorded on the clinical record at your appointment.</div>
+    </div>
+
+    <button type="submit" class="submit">Submit my consent</button>
+    <p class="foot">A full copy of this signed consent is saved to your Layali Clinic record. · <a href="privacy.html">Privacy Notice</a></p>
+  </form>
+
+  <div class="done" id="doneScreen"><div class="tick">&check;</div><h2>Thank you</h2>
+    <p>Your signed consent has been received by Layali Clinic and saved to your record. We've emailed you your guide links — please read the Pre-Care guide before your appointment. If anything about your health changes beforehand, please call us on 07787 708200.</p></div>
+  <p class="foot">Layali Clinic · 442 Lea Bridge Road, Leyton, E10 7DT · 07787 708200 · info.lushlips@gmail.com · <a href="privacy.html">Privacy Notice</a></p>
+</div>
+<script src="pack.js?v=topl"></script>
+</body></html>
