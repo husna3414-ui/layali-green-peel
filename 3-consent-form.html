@@ -139,8 +139,14 @@ info.lushlips@gmail.com
           <label class="opt"><input type="checkbox" name="Medical conditions" value="Epilepsy or seizures"><span>Epilepsy or seizures</span></label>
           <label class="opt"><input type="checkbox" name="Medical conditions" value="Bleeding or clotting disorder"><span>Bleeding or clotting disorder</span></label>
           <label class="opt"><input type="checkbox" name="Medical conditions" value="History of excessive bruising"><span>History of excessive bruising</span></label>
-          <label class="opt"><input type="checkbox" name="Medical conditions" value="Autoimmune disease"><span>Autoimmune disease</span></label>
-          <label class="opt"><input type="checkbox" name="Medical conditions" value="Thyroid disorder"><span>Thyroid disorder</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Autoimmune disease (e.g. lupus)"><span>Autoimmune disease (e.g. lupus)</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Thyroid disorder (including overactive thyroid / hyperthyroidism)"><span>Thyroid disorder (incl. overactive thyroid / hyperthyroidism)</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Neurological disorder such as epilepsy"><span>Neurological disorder such as epilepsy</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Crohn's disease or inflammatory bowel disease"><span>Crohn's disease / inflammatory bowel disease</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Urinary system infection (kidneys, bladder or urethra)"><span>Urinary system infection (kidneys, bladder or urethra)</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Deep vein thrombosis (DVT) or blood clot history"><span>Deep vein thrombosis (DVT) / blood-clot history</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Lymphoedema or lymphatic drainage problems"><span>Lymphoedema / lymphatic drainage problems</span></label>
+          <label class="opt"><input type="checkbox" name="Medical conditions" value="Melanoma, mole or lesion suspected of being malignant"><span>Melanoma / mole or lesion suspected of being malignant</span></label>
           <label class="opt"><input type="checkbox" name="Medical conditions" value="Eczema or dermatitis"><span>Eczema or dermatitis</span></label>
           <label class="opt"><input type="checkbox" name="Medical conditions" value="Psoriasis"><span>Psoriasis</span></label>
           <label class="opt"><input type="checkbox" name="Medical conditions" value="Rosacea"><span>Rosacea</span></label>
@@ -158,6 +164,14 @@ info.lushlips@gmail.com
           <label class="opt"><input type="checkbox" name="Medical conditions" value="None of the above"><span>None of the above</span></label>
         </div><div class="err-msg">Please make a selection (choose "None of the above" if none apply).</div></div>
       <div class="f"><label class="q">Please provide further details if required</label><textarea name="Medical history details"></textarea></div>
+      <!-- "Have you recently?" mirrors the Jotform's recent-treatments/medication question -->
+      <div class="f" data-group><label class="q">Have you recently had, or are you currently having, any of the following? <span class="req">*</span><div class="hint">In the past few weeks/months. Please tick all that apply.</div></label>
+        <div class="opts grid-opts" data-min="1" data-none="None of the above">
+          <label class="opt"><input type="checkbox" name="Recent treatments" value="Used Accutane / Roaccutane, topical medications or antibiotics"><span>Used Accutane / Roaccutane, topical medications or antibiotics</span></label>
+          <label class="opt"><input type="checkbox" name="Recent treatments" value="Had aesthetic fillers, injectables or laser treatments"><span>Had aesthetic fillers, injectables or laser treatments</span></label>
+          <label class="opt"><input type="checkbox" name="Recent treatments" value="Had another facial peel, exfoliation or resurfacing treatment"><span>Had another facial peel, exfoliation or resurfacing treatment</span></label>
+          <label class="opt"><input type="checkbox" name="Recent treatments" value="None of the above"><span>None of the above</span></label>
+        </div><div class="err-msg">Please make a selection (choose "None of the above" if none apply).</div></div>
     </div>
 
     <!-- PREGNANCY -->
@@ -244,7 +258,7 @@ info.lushlips@gmail.com
       <p>While every effort is made to minimise risks, no treatment is entirely risk-free. It has been explained to me that risks include, but are not limited to:</p>
 
       <h3>Common &amp; expected</h3>
-      <ul><li>Redness</li><li>Peeling &amp; flaking (particularly with the Classic formula)</li><li>Tightness &amp; dryness</li><li>Sensitivity &amp; tenderness</li><li>Mild swelling</li><li>Temporary darkening before the skin renews</li><li>Pinpoint bleeding or mild bruising from microneedling</li></ul>
+      <ul><li>Discomfort</li><li>Redness</li><li>Peeling &amp; flaking (particularly with the Classic formula) — this may continue for up to 14 days after the procedure</li><li>Itching or irritation</li><li>Tightness &amp; dryness</li><li>Sensitivity &amp; tenderness</li><li>Mild swelling</li><li>Temporary acne breakouts or spots as the skin renews</li><li>Temporary darkening before the skin renews</li><li>Pinpoint bleeding or mild bruising from microneedling</li></ul>
 
       <h3>Serious &amp; less common</h3>
       <ul><li><b>Post-inflammatory hyperpigmentation (darkening) — the most important risk, and higher in darker skin types (Fitzpatrick IV–VI). It may be temporary or, rarely, longer-lasting.</b></li><li>Post-inflammatory hypopigmentation (lightening)</li><li>Infection (bacterial, or reactivation of cold-sore / herpes virus)</li><li>Prolonged redness or sensitivity</li><li>Allergic or hypersensitivity reaction</li><li>Scarring — usually only if the skin is picked, scratched or not cared for</li><li>Delayed healing</li><li>Uneven or unsatisfactory result requiring further treatment</li></ul>
@@ -282,9 +296,29 @@ info.lushlips@gmail.com
       <p>I confirm that I have disclosed all medical conditions, medications and allergies, and I understand that failure to disclose relevant information may increase my risk of complications.</p>
     </div>
 
+    <!-- ACKNOWLEDGEMENTS — mirrors the Jotform "I ACKNOWLEDGE THE FOLLOWING" block.
+         Every statement here must be ticked (data-all). -->
+    <div class="card prose">
+      <div class="sec-h"><span class="sec-n">13</span><h2 class="sec-t">I acknowledge the following</h2></div>
+      <p>Please read and confirm you understand and accept each of the following:</p>
+      <div class="f" data-group><div class="opts" data-all>
+        <label class="opt"><input type="checkbox" name="Acknowledgements" value="I have completed my medical history form accurately and truthfully."><span>I have completed my medical history form <b>accurately and truthfully</b>.</span></label>
+        <label class="opt"><input type="checkbox" name="Acknowledgements" value="I currently have no cold sores, and if I carry the herpes (cold-sore) virus I will take antiviral medication to prepare, as advised."><span>I currently have <b>no cold sores</b>, and if I carry the herpes (cold-sore) virus I will take <b>antiviral medication</b> to prepare, as advised.</span></label>
+        <label class="opt"><input type="checkbox" name="Acknowledgements" value="I am not currently pregnant or breastfeeding."><span>I am not currently <b>pregnant or breastfeeding</b>.</span></label>
+        <label class="opt"><input type="checkbox" name="Acknowledgements" value="I have no allergies that would contraindicate this treatment (for example salicylic acid / salicylates)."><span>I have no allergies that would contraindicate this treatment (for example <b>salicylic acid / salicylates</b>).</span></label>
+        <label class="opt"><input type="checkbox" name="Acknowledgements" value="I do not have open lesions, eczema or inflamed skin on the area to be treated."><span>I do not have <b>open lesions, eczema or inflamed skin</b> on the area to be treated.</span></label>
+        <label class="opt"><input type="checkbox" name="Acknowledgements" value="I understand the purpose of this peeling procedure is to exfoliate the outer surface of my skin, which may or may not result in skin peeling or flaking, as each case is individual."><span>I understand the purpose of this procedure is to <b>exfoliate the outer surface of my skin</b>, which may or may not result in peeling or flaking, as each case is individual.</span></label>
+        <label class="opt"><input type="checkbox" name="Acknowledgements" value="I will not scratch, pick, pull at or abrade the treated skin."><span>I will <b>not scratch, pick, pull at or abrade</b> the treated skin.</span></label>
+        <label class="opt"><input type="checkbox" name="Acknowledgements" value="I understand that direct sun exposure and use of a tanning booth is prohibited during the treatment period, and that a physical sun protection of at least SPF 50 (fragrance-free) must be applied daily."><span>I understand that <b>direct sun exposure and sunbeds/tanning booths are prohibited</b> during the treatment period, and that a fragrance-free physical <b>sun protection of at least SPF 50</b> must be applied daily.</span></label>
+        <label class="opt"><input type="checkbox" name="Acknowledgements" value="I understand that it may take several treatments to obtain the desired results."><span>I understand that it may take <b>several treatments</b> to obtain the desired results.</span></label>
+        <label class="opt"><input type="checkbox" name="Acknowledgements" value="I understand that there are no guaranteed results, and that many variables affect the outcome — such as age, sun damage, ongoing sun exposure, smoking, excessive alcohol intake, climate, diet and water intake, and skin thickness and sensitivity."><span>I understand there are <b>no guaranteed results</b>, and that many variables affect the outcome — such as age, sun damage, ongoing sun exposure, smoking, excessive alcohol intake, climate, diet and water intake, and skin thickness and sensitivity.</span></label>
+        <label class="opt"><input type="checkbox" name="Acknowledgements" value="I understand that to achieve maximum results and avoid complications I must follow the recommended home-care routine, and that if I alter the routine or use products not recommended by my skincare professional, my results could be altered or inhibited."><span>I understand that to achieve maximum results and avoid complications I must follow the recommended <b>home-care routine</b>, and that using products not recommended by my skincare professional could alter or inhibit my results.</span></label>
+      </div><div class="err-msg">Please confirm all statements to continue.</div></div>
+    </div>
+
     <!-- ALTERNATIVES -->
     <div class="card prose">
-      <div class="sec-h"><span class="sec-n">13</span><h2 class="sec-t">Alternative treatments</h2></div>
+      <div class="sec-h"><span class="sec-n">15</span><h2 class="sec-t">Alternative treatments</h2></div>
       <p>I understand that alternative options may include:</p>
       <ul><li>No treatment</li><li>Chemical peels (acid-based)</li><li>Microneedling on its own</li><li>A medical-grade skincare routine</li><li>Other practitioner-recommended treatments</li></ul>
       <p>I understand that I have the right to decline treatment or choose an alternative option.</p>
@@ -292,7 +326,7 @@ info.lushlips@gmail.com
 
     <!-- EMERGENCIES / WARNING CARD -->
     <div class="card prose">
-      <div class="sec-h"><span class="sec-n">14</span><h2 class="sec-t">Warning signs &amp; emergencies</h2></div>
+      <div class="sec-h"><span class="sec-n">16</span><h2 class="sec-t">Warning signs &amp; emergencies</h2></div>
       <div class="notice warn"><h4>Contact Layali Clinic if you notice</h4>
         <ul style="margin:10px 0 0;padding-left:18px"><li>Redness or sensitivity worsening rather than settling</li><li>Increasing discomfort</li><li>A cold sore developing</li><li>Unusual or patchy darkening (pigmentation)</li><li>Weeping, crusting or an area that looks infected</li><li>Any symptom that concerns you</li></ul>
         <div style="margin-top:10px">Seek <b>urgent</b> medical care (call <b>999</b> or go to <b>A&amp;E</b>) if you develop signs of a <b>spreading infection</b> (spreading redness/heat/swelling with pus, red streaking, fever, feeling unwell) or a <b>severe allergic reaction</b> (facial swelling, difficulty breathing or swallowing, widespread rash). <b>Layali Clinic:</b> 07787&nbsp;708200.</div>
@@ -301,7 +335,7 @@ info.lushlips@gmail.com
 
     <!-- PHOTOGRAPHY -->
     <div class="card prose">
-      <div class="sec-h"><span class="sec-n">15</span><h2 class="sec-t">Clinical photographs</h2></div>
+      <div class="sec-h"><span class="sec-n">17</span><h2 class="sec-t">Clinical photographs</h2></div>
       <p>I authorise the taking of clinical photographs before, during and after treatment. I understand photographs are used for assessment, treatment planning, medical records, monitoring progress and comparing results, and will be stored securely as part of my treatment record.</p>
       <div class="f" data-group><label class="q">Please tick <span class="req">*</span></label>
         <div class="opts" data-min="1">
@@ -315,15 +349,21 @@ info.lushlips@gmail.com
 
     <!-- PAYMENT & CANCELLATION -->
     <div class="card prose">
-      <div class="sec-h"><span class="sec-n">16</span><h2 class="sec-t">Payment &amp; cancellation</h2></div>
+      <div class="sec-h"><span class="sec-n">18</span><h2 class="sec-t">Payment &amp; cancellation</h2></div>
       <p>I understand that this is an elective aesthetic treatment. I understand that:</p>
       <ul><li>The treatment fee (£POA — confirmed at consultation) has been or will be explained to me.</li><li>Payment is required as agreed by the clinic.</li><li>Deposits are non-refundable unless otherwise stated by the clinic policy.</li><li>Once treatment has been carried out, no refund will be given.</li><li>Reasonable notice is required to cancel or reschedule; late cancellations or no-shows may forfeit the deposit.</li><li>Results vary and a course may be required, which may incur additional cost.</li></ul>
+      <!-- Financial responsibility, follow-up and release-of-liability confirmations mirror the Jotform CONSENT block -->
+      <div class="f" data-group><div class="opts" data-all>
+        <label class="opt"><input type="checkbox" name="Financial and liability" value="I accept personal financial responsibility for the cost of my treatment."><span>I accept <b>personal financial responsibility</b> for the cost of my treatment.</span></label>
+        <label class="opt"><input type="checkbox" name="Financial and liability" value="I agree to attend any recommended follow-up or review appointments."><span>I agree to attend any recommended <b>follow-up or review appointments</b>.</span></label>
+        <label class="opt"><input type="checkbox" name="Financial and liability" value="I release Layali Clinic and its practitioners from liability for any complications arising from information I have withheld, or from my failure to follow the pre-care, aftercare or home-care instructions given to me."><span>I release Layali Clinic and its practitioners from liability for complications arising from information I have <b>withheld</b>, or from my failure to <b>follow the pre-care, aftercare or home-care instructions</b> given to me.</span></label>
+      </div><div class="err-msg">Please confirm all statements to continue.</div></div>
       <div class="f"><label class="q">Your initials <span class="req">*</span></label><input type="text" name="Payment initials" required style="max-width:140px"></div>
     </div>
 
     <!-- FINAL DECLARATION -->
     <div class="card prose">
-      <div class="sec-h"><span class="sec-n">17</span><h2 class="sec-t">Final declaration &amp; consent</h2></div>
+      <div class="sec-h"><span class="sec-n">19</span><h2 class="sec-t">Final declaration &amp; consent</h2></div>
       <p>I voluntarily consent to undergo a Bio-Microneedling Facial with Green Peel at Layali Clinic. Please read and confirm each of the following:</p>
       <div class="f" data-group><div class="opts" data-all>
         <label class="opt"><input type="checkbox" name="Final declaration" value="I have READ the Pre-Care guide and understand how to prepare before my appointment."><span>I have <b>read the Pre-Care guide</b> and understand how to prepare before my appointment.</span></label>
@@ -351,7 +391,7 @@ info.lushlips@gmail.com
 
     <!-- PRACTITIONER DECLARATION -->
     <div class="card prose">
-      <div class="sec-h"><span class="sec-n">18</span><h2 class="sec-t">Practitioner declaration</h2></div>
+      <div class="sec-h"><span class="sec-n">20</span><h2 class="sec-t">Practitioner declaration</h2></div>
       <p>I confirm that I have discussed this treatment with the client, including the nature of the treatment, expected benefits, possible risks and complications (including pigmentation), alternatives, aftercare and expected recovery. I confirm that the client has had the opportunity to ask questions and that these have been answered to the best of my ability.</p>
       <div class="row">
         <div class="f"><label class="q">Practitioner name</label><input type="text" name="Practitioner name" value="Husna Panjabi"></div>
